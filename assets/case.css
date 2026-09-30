@@ -42,7 +42,7 @@ main{width:min(1120px,100% - 32px);margin:0 auto;padding:56px 0 96px;display:fle
 .meta div{display:grid;gap:2px}
 .meta dt{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .meta dd{margin:0;font-weight:600}
-.cover{aspect-ratio:16/8;min-height:260px}
+.cover{aspect-ratio:2/1}
 
 .sec{display:grid;grid-template-columns:260px 1fr;gap:32px;align-items:start}
 .sec h2{font-size:clamp(30px,3.4vw,44px)}
@@ -82,3 +82,25 @@ footer a{font-weight:600}
 }
 @media (max-width:420px){ .logo span:last-child{display:none} .gallery{gap:12px} }
 @media (prefers-reduced-motion:reduce){ *{transition:none!important;scroll-behavior:auto!important} }
+
+/* ---------- round 3: images, lists, process ---------- */
+.shot{position:relative;overflow:hidden;background:#fff;padding:0}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.shot-ph{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-weight:600;color:var(--muted)}
+.gallery .shot{aspect-ratio:9/14}
+.gallery .shot.wide{grid-column:span 2;aspect-ratio:16/10}
+.gallery .shot.detail{aspect-ratio:4/5}
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.ticks li{position:relative;padding:14px 18px 14px 56px;background:var(--cream);border:3px solid var(--ink);border-radius:18px;box-shadow:3px 3px 0 var(--ink);font-weight:500}
+.ticks li::before{content:"✓";position:absolute;left:14px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--mint);border:2px solid var(--ink);font-weight:700;font-size:14px}
+.ticks.bad li::before{content:"!";background:var(--coral);color:var(--cream)}
+.steps.two{grid-template-columns:repeat(2,1fr)}
+.flow-list{list-style:none;margin:12px 0 0;padding:0;counter-reset:f;display:grid;gap:10px}
+.flow-list li{counter-increment:f;display:flex;gap:12px;align-items:center;font-weight:600}
+.flow-list li::before{content:counter(f);flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--accent);border:2px solid var(--ink);font-family:var(--display);font-size:13px}
+.step b + h3,.step h3 b{color:var(--coral)}
+@media (max-width:860px){
+  .cover{aspect-ratio:4/3}
+  .gallery .shot.detail{grid-column:span 2}
+  .steps.two{grid-template-columns:1fr}
+}

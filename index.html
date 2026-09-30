@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Michael Christianto — Portfolio (Playful)</title>
+<meta name="description" content="Michael Christianto — product designer with 6+ years of experience building B2B, B2C and SaaS web apps, with AI built into how he designs and ships.">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,6 +109,37 @@
     .room [data-pop],.room.active [data-pop]{animation:none;opacity:1;transform:rotate(var(--r,0deg))}
     .arrow-hint svg{animation:none}
   }
+  /* ---------- round 3: work stickers, many-more badge, tags, portrait ---------- */
+  .work-head{text-align:center}
+  .stack .work-head{text-align:left}
+  .card-h{display:flex;align-items:center;gap:14px;padding:12px;text-decoration:none;color:var(--ink)}
+  .card-img{position:relative;display:block;flex:0 0 44%;aspect-ratio:4/3;border:3px solid var(--ink);border-radius:16px;overflow:hidden;background:#fff}
+  .card-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .card-txt{display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-width:0}
+  .card-txt h3{font-size:clamp(19px,1.65vw,26px);line-height:1.1;margin:2px 0 0}
+  .card-role{font-weight:600;font-size:14px}
+  .stack .card-h{flex-direction:column;align-items:stretch}
+  .stack .card-img{flex:none;width:100%}
+  .more-badge{width:124px;height:124px;border-radius:50%;background:var(--butter);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);display:grid;place-items:center;text-decoration:none;color:var(--ink)}
+  .more-badge svg{position:absolute;inset:4px;width:calc(100% - 8px);height:calc(100% - 8px);overflow:visible;animation:mmspin 16s linear infinite}
+  .more-badge text{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.06em;fill:var(--ink)}
+  .mm-core{position:relative;width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--cream);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:22px;transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+  .more-badge:hover .mm-core,.more-badge:focus-visible .mm-core{transform:rotate(45deg) scale(1.08)}
+  .more-badge:hover svg{animation-duration:5s}
+  @keyframes mmspin{to{transform:rotate(360deg)}}
+  .stack .room .pos.more-badge{width:124px!important;height:124px!important;align-self:center;margin-top:26px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tags .tag{margin:0}
+  .portrait-ph{position:relative;height:100%;border-radius:4px;overflow:hidden;background:#F0EEE9}
+  .portrait-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+  .stack .polaroid .portrait-ph{height:auto;aspect-ratio:2/3}
+  .stack .room .pos.polaroid{width:min(320px,86vw)!important}
+  @media (min-width:600px){ .stack .card-h{flex-direction:row;align-items:center} .stack .card-img{flex:0 0 42%;width:auto} }
+  @media (max-height:780px){
+    .about-card .h-room{font-size:clamp(28px,3.2vw,40px)}
+    .about-card p{font-size:15px!important}
+  }
+  @media (prefers-reduced-motion:reduce){ .more-badge svg{animation:none} }
 </style>
 </head>
 <body>
@@ -120,7 +152,7 @@
   <nav>
     <a class="btn" href="#" data-go="1">Work</a>
     <a class="btn" href="#" data-go="3">About</a>
-    <a class="btn btn-ink" href="#" data-go="4">Let's talk</a>
+    <a class="btn btn-ink" href="mailto:michaelchristianto.job@gmail.com">Let's talk</a>
   </nav>
 </header>
 
@@ -131,7 +163,9 @@
     <div class="m-space" aria-hidden="true"></div>
     <div class="pos sticker card-pad m-stack" data-pop style="--r:-3deg;--d:.15s;left:5vw;bottom:14vh;width:min(360px,30vw)">
       <span class="label" style="background:var(--butter)">Product Designer</span>
-      <p style="font-size:18px;line-height:1.5;margin:14px 0 18px">I design and build operational tools that people use all day — and make them feel friendly without losing precision.</p>
+      <p style="font-size:18px;line-height:1.5;margin:14px 0 12px">Product designer who designs — and builds — the operational tools people use all day.</p>
+      <div class="tags" aria-label="Focus"><span class="tag" style="background:#E4F1FF">B2B</span><span class="tag" style="background:#FFE3F1">B2C</span><span class="tag" style="background:#DFFBEF">SaaS</span><span class="tag" style="background:#EFE6FF">AI</span></div>
+      <p class="muted" style="font-size:14px;line-height:1.45;margin:12px 0 16px">Currently: Product Designer at Sobat Bisnis Group, placed at Paragon Technology &amp; Innovation.</p>
       <a class="btn btn-ink" href="#" data-go="1">See my work →</a>
     </div>
     <div class="pos arrow-hint sticker card-pad m-stack" data-pop style="--r:4deg;--d:.3s;right:6vw;bottom:18vh;background:var(--mint)">
@@ -141,59 +175,86 @@
   </section>
 
   <!-- 1 · WORK -->
-  <section class="room" id="work" data-say="Ooh — Heron is the big one.">
-    <div data-pop style="--r:-2deg"><span class="label" style="background:var(--mint)">Selected work</span></div>
-    <h2 class="h-room" data-pop style="--d:.08s;margin-top:12px">Things I've shipped</h2>
-    <a class="pos sticker m-stack" href="case/heron.html" data-pop style="--r:-2deg;--d:.15s;left:5vw;top:30vh;width:34vw;height:54vh;display:flex;flex-direction:column;overflow:hidden">
-      <div class="ph" style="flex:1;margin:14px;background:rgba(255,210,63,.35)">[HERON SCREENSHOT]</div>
-      <div style="padding:0 22px 22px">
-        <span class="tag" style="background:var(--butter)">Enterprise</span><span class="tag">Design + Build</span>
-        <h3 style="font-size:36px;margin:10px 0 6px">Heron WMS <span style="font-size:20px">→</span></h3>
-        <p class="muted" style="margin:0;font-size:16px;line-height:1.5">An internal warehouse management system — modules across the full operational lifecycle, inbound to outbound.</p>
-      </div>
+  <section class="room" id="work" data-say="Four favourites — and many more on Behance.">
+    <div class="work-head">
+      <div data-pop style="--r:-2deg"><span class="label" style="background:var(--mint)">Selected work</span></div>
+      <h2 class="h-room" data-pop style="--d:.08s;margin-top:12px">Things I've shipped</h2>
+    </div>
+    <a class="pos sticker card-h m-stack" href="case/paragon-wms.html" data-pop style="--r:-2deg;--d:.15s;left:4vw;top:30vh;width:31vw;background:#FFFBF2">
+      <span class="card-img"><img src="assets/img/paragon-wms-thumb.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+      <span class="card-txt">
+        <span class="tag" style="background:var(--butter)">Enterprise · WMS</span>
+        <h3>Paragon WMS <span aria-hidden="true">→</span></h3>
+        <span class="muted card-role">CX Designer</span>
+      </span>
     </a>
-    <a class="pos sticker card-pad m-stack" href="case/project-2.html" data-pop style="--r:3deg;--d:.25s;right:5vw;top:24vh;width:30vw;background:#FFE3F1">
-      <div class="ph" style="height:15vh">[PROJECT IMAGE]</div>
-      <h3 style="font-size:24px;margin-top:12px">[PROJECT TITLE]</h3>
-      <p class="muted" style="margin:4px 0 0">[One line: problem, your role, outcome]</p>
+    <a class="pos sticker card-h m-stack" href="case/onebunda.html" data-pop style="--r:1.5deg;--d:.25s;left:4vw;top:57vh;width:31vw;background:#FFE3F1">
+      <span class="card-img"><img src="assets/img/onebunda-thumb.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+      <span class="card-txt">
+        <span class="tag" style="background:#fff">Healthcare · PWA</span>
+        <h3>OneBunda <span aria-hidden="true">→</span></h3>
+        <span class="muted card-role">Product Designer</span>
+      </span>
     </a>
-    <a class="pos sticker card-pad m-stack" href="case/project-3.html" data-pop style="--r:-2.5deg;--d:.35s;right:7vw;top:58vh;width:28vw;background:#E4F1FF">
-      <div class="ph" style="height:11vh">[PROJECT IMAGE]</div>
-      <h3 style="font-size:24px;margin-top:12px">[PROJECT TITLE]</h3>
+    <a class="pos sticker card-h m-stack" href="case/facethecamera.html" data-pop style="--r:2deg;--d:.35s;right:4vw;top:30vh;width:31vw;background:#E4F1FF">
+      <span class="card-img"><img src="assets/img/facethecamera-thumb.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+      <span class="card-txt">
+        <span class="tag" style="background:#fff">Website · AI</span>
+        <h3>Facethecamera <span aria-hidden="true">→</span></h3>
+        <span class="muted card-role">Website Designer</span>
+      </span>
+    </a>
+    <a class="pos sticker card-h m-stack" href="case/b2b-supply-chain.html" data-pop style="--r:-1.5deg;--d:.45s;right:4vw;top:57vh;width:31vw;background:#DFFBEF">
+      <span class="card-img"><img src="assets/img/b2b-supply-chain-thumb.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+      <span class="card-txt">
+        <span class="tag" style="background:#fff">Mobile apps · B2B</span>
+        <h3>B2B Supply Chain Tracking <span aria-hidden="true">→</span></h3>
+        <span class="muted card-role">Product Designer</span>
+      </span>
+    </a>
+    <a class="pos more-badge m-stack" href="https://www.behance.net/michaelchristianto" target="_blank" rel="noopener noreferrer" aria-label="Many more projects on Behance" data-pop style="--r:0deg;--d:.6s;left:calc(50vw - 62px);top:max(27vh,226px)">
+      <svg viewBox="0 0 144 144" aria-hidden="true"><defs><path id="mm-ring" d="M72,72 m-56,0 a56,56 0 1,1 112,0 a56,56 0 1,1 -112,0"/></defs><text><textPath href="#mm-ring" textLength="350" lengthAdjust="spacing">MANY MORE ✦ ON BEHANCE ✦ MANY MORE ✦ ON BEHANCE ✦ </textPath></text></svg>
+      <span class="mm-core" aria-hidden="true">↗</span>
     </a>
   </section>
 
   <!-- 2 · PROCESS -->
   <section class="room" id="process" data-say="Three steps. Step one is the fun one.">
     <div data-pop style="--r:2deg"><span class="label" style="background:var(--sky);color:var(--ink)">Process</span></div>
-    <h2 class="h-room" data-pop style="--d:.08s;margin-top:12px">From floor to pixel</h2>
+    <h2 class="h-room" data-pop style="--d:.08s;margin-top:12px">From pain to product</h2>
     <div class="pos sticker card-pad m-stack" data-pop style="--r:-4deg;--d:.15s;left:5vw;top:46vh;width:27vw;background:#FFF1C2">
       <div class="num" style="color:var(--coral)">01</div>
-      <h3 style="font-size:24px;margin:8px 0">Go where the work happens</h3>
-      <p class="muted" style="margin:0;line-height:1.5">Watch operators at their stations before drawing a single screen. The real flow is rarely the documented one.</p>
+      <h3 style="font-size:24px;margin:8px 0">Find the real pain</h3>
+      <p class="muted" style="margin:0;line-height:1.5">I start with people, not pixels — interviews, workflows and data, until the real problem is clear.</p>
     </div>
     <div class="pos sticker card-pad m-stack" data-pop style="--r:2deg;--d:.28s;left:37vw;top:27vh;width:26vw;background:#DFFBEF">
       <div class="num" style="color:#169C66">02</div>
-      <h3 style="font-size:24px;margin:8px 0">Design the whole lifecycle</h3>
-      <p class="muted" style="margin:0;line-height:1.5">A module never lives alone. I map how each step hands off to the next so nothing breaks between screens.</p>
+      <h3 style="font-size:24px;margin:8px 0">Draft to prototype</h3>
+      <p class="muted" style="margin:0;line-height:1.5">I plan the solution from rough drafts to a working prototype, and put it in front of users and the team early.</p>
     </div>
     <div class="pos sticker card-pad m-stack" data-pop style="--r:5deg;--d:.41s;right:5vw;top:44vh;width:27vw;background:#EFE6FF">
       <div class="num" style="color:#6B3FD6">03</div>
-      <h3 style="font-size:24px;margin:8px 0">Build it, then write it down</h3>
-      <p class="muted" style="margin:0;line-height:1.5">I prototype in code and ship guidebooks alongside features, so teams can actually adopt what we make.</p>
+      <h3 style="font-size:24px;margin:8px 0">Iterate &amp; hand over</h3>
+      <p class="muted" style="margin:0;line-height:1.5">Feedback drives the next round. I refine, hand over to the team, and loop back when new feedback lands.</p>
+    </div>
+    <div class="pos sticker card-pad m-stack" data-pop style="--r:-2deg;--d:.55s;right:5vw;top:12vh;width:min(440px,33vw);background:#fff">
+      <div style="font-family:var(--display);font-weight:700;font-size:18px;margin-bottom:10px">What I bring</div>
+      <div class="tags"><span class="tag" style="background:#FFE3F1">Product thinking</span><span class="tag" style="background:#E4F1FF">Vibe coding</span><span class="tag" style="background:#DFFBEF">Front-end build</span><span class="tag" style="background:#FFF1C2">Documentation &amp; guidebooks</span></div>
     </div>
   </section>
 
   <!-- 3 · ABOUT -->
   <section class="room" id="about" data-say="That's the human. He's nice.">
     <figure class="pos polaroid m-stack" data-pop style="--r:-5deg;--d:.1s;left:8vw;top:20vh;width:25vw;height:60vh;margin:0">
-      <div class="ph" style="height:100%;background:rgba(61,220,151,.18)">[YOUR PHOTO]</div>
-      <figcaption>[PHOTO CAPTION]</figcaption>
+      <div class="portrait-ph"><img src="assets/img/MikeLightTransparent-portrait.webp" alt="Portrait of Michael Christianto" loading="lazy" decoding="async"></div>
+      <figcaption>Me, between runs.</figcaption>
     </figure>
-    <div class="pos sticker card-pad m-stack" data-pop style="--r:2deg;--d:.25s;right:6vw;top:20vh;width:33vw">
+    <div class="pos sticker card-pad m-stack about-card" data-pop style="--r:2deg;--d:.25s;right:6vw;top:18vh;width:34vw">
       <span class="label" style="background:var(--lilac);color:var(--ink)">About</span>
       <h2 class="h-room" style="margin:14px 0 12px">The human behind the tools.</h2>
-      <p class="muted" style="font-size:17px;line-height:1.55;margin:0 0 18px">Product Designer at Sobat Bisnis Group, placed at Paragon Technology &amp; Innovation. [Add a line about what drives you, and something you do outside work.]</p>
+      <p style="font-size:17px;line-height:1.55;margin:0 0 10px">I'm a product designer with 6+ years of experience building B2B, B2C and SaaS web apps — with AI built into how I design and ship.</p>
+      <p class="muted" style="font-size:16px;line-height:1.55;margin:0 0 14px">When I'm not pushing pixels, I'm pushing pace — out on a run, or running to catch my next flight.</p>
+      <div class="tags" aria-label="Platforms" style="margin-bottom:18px"><span class="tag">Website</span><span class="tag">Mobile apps</span><span class="tag">PWA</span><span class="tag">SaaS</span></div>
       <a class="btn" href="https://drive.google.com/file/d/1l_kRScQsm5MerBtPpweXRXTKqoEeShX1/view?usp=drive_link" target="_blank" rel="noopener noreferrer" style="background:var(--butter)">Download CV →</a>
     </div>
   </section>
@@ -201,9 +262,9 @@
   <!-- 4 · CONTACT -->
   <section class="room" id="contact" data-say="Go on, say hi!">
     <h2 class="h-huge" data-pop style="font-size:clamp(48px,7vw,112px);text-shadow:6px 6px 0 var(--lilac)">Let's make something fun.</h2>
-    <a class="pos sticker card-pad m-stack" href="mailto:michael.christianto.job@gmail.com" data-pop style="--r:-3deg;--d:.15s;left:7vw;bottom:20vh;width:min(320px,28vw);background:var(--butter)">
+    <a class="pos sticker card-pad m-stack" href="mailto:michaelchristianto.job@gmail.com" data-pop style="--r:-3deg;--d:.15s;left:7vw;bottom:20vh;width:min(340px,30vw);background:var(--butter)">
       <div style="font-family:var(--display);font-weight:700;font-size:28px">Email me →</div>
-      <div class="muted" style="margin-top:6px;overflow-wrap:anywhere">michael.christianto.job@gmail.com</div>
+      <div class="muted" style="margin-top:6px;font-size:14px;overflow-wrap:anywhere">michaelchristianto.job@gmail.com</div>
     </a>
     <div class="pos sticker card-pad m-stack" data-pop style="--r:3deg;--d:.28s;right:7vw;bottom:20vh;width:min(320px,28vw)">
       <div style="font-family:var(--display);font-weight:700;font-size:22px;margin-bottom:12px">Find me around</div>
