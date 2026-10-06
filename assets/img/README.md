@@ -1,28 +1,26 @@
-# Gambar portfolio
+# Gambar portfolio — Port1 Colorful
 
-Gambar OneBunda dan foto portrait sudah final; gambar proyek lain masih **dummy**. Untuk mengganti, upload gambar baru dengan **nama file yang sama persis** (file lama otomatis tertimpa). Kalau sebuah file dihapus, kotak placeholder yang tampil, jadi website tidak rusak.
+Semua gambar sekarang sama dengan Port2 (nama file sama), jadi kalau mengganti gambar di satu versi, upload file yang sama ke versi lain. Upload dengan **nama file yang sama persis** supaya file lama tertimpa.
 
-- Format: **JPG**, quality ±80%, warna sRGB
-- Ukuran file: usahakan di bawah 300 KB (cover di bawah 500 KB). Kompres di squoosh.app atau tinyjpg.com
-- Semua ukuran sudah 2× supaya tetap tajam di layar retina
-
-Slug proyek: `paragon-wms`, `onebunda`, `facethecamera`, `b2b-supply-chain`
+Slug proyek (nama file dan URL): `paragon-wms` (WMS System), `onebunda` (E-Health PWA), `facethecamera` (AI Teleprompter), `b2b-supply-chain` (B2B Supply Chain).
 
 ## Home (index.html)
 
-| Nama file | Ukuran (px) | Rasio | Muncul di |
-|---|---|---|---|
-| `<slug>-thumb.jpg` | 800 × 600 | 4:3 | Preview yang mengikuti kursor saat hover baris proyek di *Selected work* (tampil hitam-putih) |
-| `MikeDarkTransparent-portrait.webp` | ±1000 px, background transparan | bebas | Foto di section *About* saat **dark mode** |
-| `MikeLightTransparent-portrait.webp` | ±1000 px, background transparan | bebas | Foto di section *About* saat **light mode** |
+| Nama file | Muncul di |
+|---|---|
+| `<slug>-thumb.jpg` (4:3) | Gambar di kartu *Selected work*. WMS tampil sebagai kartu besar "Featured", tiga lainnya kartu kecil |
+| `MikeLightTransparent-portrait.webp` | Foto polaroid di room *About* |
 
 ## Halaman case study (case/<slug>.html)
 
-| Nama file | Ukuran (px) | Rasio | Muncul di |
-|---|---|---|---|
-| `<slug>-cover.jpg` | 2400 × 1200 | 2:1 | Cover besar di bawah judul. Di HP dipotong jadi 4:3 dari tengah, jadi taruh isi penting di area tengah 1600 × 1200 |
-| `<slug>-1.jpg` | 1920 × 1200 | 16:10 | Galeri: layar lebar (dashboard / website) |
-| `<slug>-2.jpg` | 1200 × 1500 | 4:5 | Galeri: detail / close-up |
-| `<slug>-3.jpg` `<slug>-4.jpg` `<slug>-5.jpg` | 1080 × 1680 | 9:14 | Galeri: layar HP. Taruh screen di atas background, jangan pakai screenshot mentah (layar HP lebih panjang dari 9:14, jadi akan terpotong) |
-
-Contoh: cover Onebunda = `onebunda-cover.jpg`, thumbnail Paragon WMS = `paragon-wms-thumb.jpg`.
+| Nama file | Ukuran (px) | Muncul di |
+|---|---|---|
+| `paragon-wms-cover.webp` | 2400 × 1200, transparan | Cover WMS System |
+| `onebunda-cover.jpg` | 2400 × 1200 | Cover E-Health PWA |
+| `facethecamera-cover.jpg` | 2400 × 1200 | Cover AI Teleprompter |
+| (tanpa cover) | — | B2B Supply Chain sengaja tanpa cover |
+| `wms-site-1.jpg` … `wms-site-4.jpg` | foto portrait | Slider otomatis *On the floor* (WMS) |
+| `wms-dashboard.webp`, `wms-mobile-1.webp` … `-5.webp` | transparan | *Screens* WMS |
+| `ehealth-mobile-1.webp` … `-8.webp` | 780 × 1680, transparan | *Screens* E-Health PWA |
+| `facethecamera-desktop.webp`, `facethecamera-mobile-1.webp` … `-6.webp` | transparan | *Screens* AI Teleprompter |
+| `b2b-mobile-1.webp` … `-6.webp` | lebar 780, transparan | *Screens* B2B Supply Chain |

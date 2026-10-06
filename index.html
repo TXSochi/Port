@@ -140,6 +140,28 @@
     .about-card p{font-size:15px!important}
   }
   @media (prefers-reduced-motion:reduce){ .more-badge svg{animation:none} }
+  /* ---------- round 7: one big featured WMS card + three smaller cards ---------- */
+  #work{--top:max(29vh,250px);--minih:min(clamp(118px,calc(30vw * .3 + 30px),170px),calc((100vh - var(--top) - 56px) / 3 - 12px))}
+  .feat{display:flex;flex-direction:column;gap:14px;padding:14px 14px 20px;text-decoration:none;color:var(--ink)}
+  .feat-img{flex:none;width:100%;aspect-ratio:16/10}
+  .feat-img img{object-fit:cover;object-position:50% 50%}
+  .feat-txt{display:flex;flex-direction:column;gap:8px;padding:0 6px}
+  .feat-tags{display:flex;flex-wrap:wrap;gap:8px}
+  .feat h3{font-size:clamp(28px,2.6vw,40px);line-height:1.02;margin:2px 0 0}
+  .feat-sum{font-size:15px;line-height:1.45}
+  .feat-badge{position:absolute;right:-14px;top:-16px;z-index:2;padding:8px 14px;border:3px solid var(--ink);border-radius:999px;background:var(--coral);color:var(--cream);font-family:var(--display);font-weight:700;font-size:15px;box-shadow:3px 3px 0 var(--ink);transform:rotate(8deg);animation:featwiggle 3.2s ease-in-out infinite}
+  @keyframes featwiggle{0%,100%{transform:rotate(8deg)}50%{transform:rotate(-2deg) scale(1.06)}}
+  .mini{height:var(--minih);padding:10px;gap:12px}
+  .mini .card-img{flex:0 0 40%;height:100%;aspect-ratio:auto}
+  .mini .card-txt h3{font-size:clamp(17px,1.45vw,23px)}
+  .mini .card-role{font-size:13px}
+  .stack .feat{padding:12px 12px 18px}
+  .stack .feat-badge{right:-6px;top:-14px}
+  .stack .room .pos.mini{height:auto!important}
+  .stack .mini .card-img{flex:none;width:100%;height:auto;aspect-ratio:4/3}
+  @media (min-width:600px){ .stack .mini .card-img{flex:0 0 42%;width:auto} }
+  @media (max-height:760px){ .feat-sum{display:none} }
+  @media (prefers-reduced-motion:reduce){ .feat-badge{animation:none} }
 </style>
 </head>
 <body>
@@ -165,7 +187,7 @@
       <span class="label" style="background:var(--butter)">Product Designer</span>
       <p style="font-size:18px;line-height:1.5;margin:14px 0 12px">Product designer who designs — and builds — the operational tools people use all day.</p>
       <div class="tags" aria-label="Focus"><span class="tag" style="background:#E4F1FF">B2B</span><span class="tag" style="background:#FFE3F1">B2C</span><span class="tag" style="background:#DFFBEF">SaaS</span><span class="tag" style="background:#EFE6FF">AI</span></div>
-      <p class="muted" style="font-size:14px;line-height:1.45;margin:12px 0 16px">Currently: Product Designer at Sobat Bisnis Group, placed at Paragon Technology &amp; Innovation.</p>
+      <p class="muted" style="font-size:14px;line-height:1.45;margin:12px 0 16px">Currently: Product Designer at Paragon Technology &amp; Innovation.</p>
       <a class="btn btn-ink" href="#" data-go="1">See my work →</a>
     </div>
     <div class="pos arrow-hint sticker card-pad m-stack" data-pop style="--r:4deg;--d:.3s;right:6vw;bottom:18vh;background:var(--mint)">
@@ -175,40 +197,41 @@
   </section>
 
   <!-- 1 · WORK -->
-  <section class="room" id="work" data-say="Four favourites — and many more on Behance.">
+  <section class="room" id="work" data-say="Ooh — WMS is the big one.">
     <div class="work-head">
       <div data-pop style="--r:-2deg"><span class="label" style="background:var(--mint)">Selected work</span></div>
       <h2 class="h-room" data-pop style="--d:.08s;margin-top:12px">Things I've shipped</h2>
     </div>
-    <a class="pos sticker card-h m-stack" href="case/paragon-wms.html" data-pop style="--r:-2deg;--d:.15s;left:4vw;top:30vh;width:31vw;background:#FFFBF2">
-      <span class="card-img"><img src="assets/img/paragon-wms-thumb.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
-      <span class="card-txt">
-        <span class="tag" style="background:var(--butter)">Enterprise · WMS</span>
-        <h3>Paragon WMS <span aria-hidden="true">→</span></h3>
-        <span class="muted card-role">CX Designer</span>
+    <a class="pos sticker feat m-stack" href="case/paragon-wms.html" data-pop style="--r:-2deg;--d:.15s;left:4vw;top:var(--top);width:34vw;background:#FFFBF2">
+      <span class="feat-badge" aria-hidden="true">★ Featured</span>
+      <span class="card-img feat-img"><img src="assets/img/paragon-wms-thumb.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+      <span class="feat-txt">
+        <span class="feat-tags"><span class="tag" style="background:var(--butter)">Enterprise · WMS</span><span class="tag">CX Designer</span></span>
+        <h3>WMS System <span aria-hidden="true">→</span></h3>
+        <span class="muted feat-sum">Internal enterprise WMS — order allocation, B2B split picking, staging and dispatch for a large-scale distribution network.</span>
       </span>
     </a>
-    <a class="pos sticker card-h m-stack" href="case/onebunda.html" data-pop style="--r:1.5deg;--d:.25s;left:4vw;top:57vh;width:31vw;background:#FFE3F1">
+    <a class="pos sticker card-h mini m-stack" href="case/onebunda.html" data-pop style="--r:2deg;--d:.25s;right:4vw;top:var(--top);width:30vw;background:#FFE3F1">
       <span class="card-img"><img src="assets/img/onebunda-thumb.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
       <span class="card-txt">
-        <span class="tag" style="background:#fff">Healthcare · PWA</span>
-        <h3>OneBunda <span aria-hidden="true">→</span></h3>
+        <span class="tag" style="background:#fff">PWA</span>
+        <h3>E-Health PWA <span aria-hidden="true">→</span></h3>
         <span class="muted card-role">Product Designer</span>
       </span>
     </a>
-    <a class="pos sticker card-h m-stack" href="case/facethecamera.html" data-pop style="--r:2deg;--d:.35s;right:4vw;top:30vh;width:31vw;background:#E4F1FF">
+    <a class="pos sticker card-h mini m-stack" href="case/facethecamera.html" data-pop style="--r:-1.5deg;--d:.35s;right:4vw;top:calc(var(--top) + var(--minih) + 18px);width:30vw;background:#E4F1FF">
       <span class="card-img"><img src="assets/img/facethecamera-thumb.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
       <span class="card-txt">
-        <span class="tag" style="background:#fff">Website · AI</span>
-        <h3>Facethecamera <span aria-hidden="true">→</span></h3>
+        <span class="tag" style="background:#fff">WebApps · AI</span>
+        <h3>AI Teleprompter <span aria-hidden="true">→</span></h3>
         <span class="muted card-role">Website Designer</span>
       </span>
     </a>
-    <a class="pos sticker card-h m-stack" href="case/b2b-supply-chain.html" data-pop style="--r:-1.5deg;--d:.45s;right:4vw;top:57vh;width:31vw;background:#DFFBEF">
+    <a class="pos sticker card-h mini m-stack" href="case/b2b-supply-chain.html" data-pop style="--r:1.5deg;--d:.45s;right:4vw;top:calc(var(--top) + 2 * var(--minih) + 36px);width:30vw;background:#DFFBEF">
       <span class="card-img"><img src="assets/img/b2b-supply-chain-thumb.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
       <span class="card-txt">
-        <span class="tag" style="background:#fff">Mobile apps · B2B</span>
-        <h3>B2B Supply Chain Tracking <span aria-hidden="true">→</span></h3>
+        <span class="tag" style="background:#fff">B2B Apps</span>
+        <h3>B2B Supply Chain <span aria-hidden="true">→</span></h3>
         <span class="muted card-role">Product Designer</span>
       </span>
     </a>
@@ -239,7 +262,7 @@
     </div>
     <div class="pos sticker card-pad m-stack" data-pop style="--r:-2deg;--d:.55s;right:5vw;top:12vh;width:min(440px,33vw);background:#fff">
       <div style="font-family:var(--display);font-weight:700;font-size:18px;margin-bottom:10px">What I bring</div>
-      <div class="tags"><span class="tag" style="background:#FFE3F1">Product thinking</span><span class="tag" style="background:#E4F1FF">Vibe coding</span><span class="tag" style="background:#DFFBEF">Front-end build</span><span class="tag" style="background:#FFF1C2">Documentation &amp; guidebooks</span></div>
+      <div class="tags"><span class="tag" style="background:#FFE3F1">Product thinking</span><span class="tag" style="background:#E4F1FF">Vibe coding</span><span class="tag" style="background:#DFFBEF">AI prototyping</span><span class="tag" style="background:#FFF1C2">Documentation &amp; guidebooks</span></div>
     </div>
   </section>
 
@@ -255,7 +278,7 @@
       <p style="font-size:17px;line-height:1.55;margin:0 0 10px">I'm a product designer with 6+ years of experience building B2B, B2C and SaaS web apps — with AI built into how I design and ship.</p>
       <p class="muted" style="font-size:16px;line-height:1.55;margin:0 0 14px">When I'm not pushing pixels, I'm pushing pace — out on a run, or running to catch my next flight.</p>
       <div class="tags" aria-label="Platforms" style="margin-bottom:18px"><span class="tag">Website</span><span class="tag">Mobile apps</span><span class="tag">PWA</span><span class="tag">SaaS</span></div>
-      <a class="btn" href="https://drive.google.com/file/d/1l_kRScQsm5MerBtPpweXRXTKqoEeShX1/view?usp=drive_link" target="_blank" rel="noopener noreferrer" style="background:var(--butter)">Download CV →</a>
+      <a class="btn" href="https://drive.google.com/file/d/1tnc6XAZBq-O1pKUCmyFhcBUXKSHwxRmx/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="background:var(--butter)">Download CV →</a>
     </div>
   </section>
 
@@ -271,7 +294,7 @@
       <div style="display:flex;gap:8px;flex-wrap:wrap">
         <a class="btn" href="https://www.linkedin.com/in/michael-christiantoo/" target="_blank" rel="noopener noreferrer" style="height:44px;font-size:15px;background:#E4F1FF">LinkedIn</a>
         <a class="btn" href="https://www.behance.net/michaelchristianto" target="_blank" rel="noopener noreferrer" style="height:44px;font-size:15px;background:#FFE3F1">Behance</a>
-        <a class="btn" href="https://drive.google.com/file/d/1l_kRScQsm5MerBtPpweXRXTKqoEeShX1/view?usp=drive_link" target="_blank" rel="noopener noreferrer" style="height:44px;font-size:15px;background:#DFFBEF">Read.cv</a>
+        <a class="btn" href="https://drive.google.com/file/d/1tnc6XAZBq-O1pKUCmyFhcBUXKSHwxRmx/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="height:44px;font-size:15px;background:#DFFBEF">Read.cv</a>
       </div>
     </div>
     <div class="pos muted" style="left:0;right:0;bottom:84px;text-align:center;font-size:14px">© 2026 Michael Christianto</div>
