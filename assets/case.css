@@ -415,3 +415,7 @@ html{overflow-x:clip}
 .persona-id{display:block}
 .shot img{background:#fff}
 .oh-tag{justify-self:start}
+
+/* E-Health outcome: press sources under the metrics */
+.oh-src{font-size:15px!important;color:rgba(255,251,242,.75)}
+.oh-src a{color:var(--accent);font-weight:700;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
